@@ -1,0 +1,31 @@
+[ 
+{
+    "img": "./assets/img/products/brindes_caneca_1.png",
+    "name": "Canequinha mineira",
+    "code": 1,
+    "availableQuantity": 100,
+    "price": 11.90
+},
+{
+    "img": "./assets/img/products/brindes_caneta_1.png",
+    "name": "Caneta multifuncional",
+    "code": 2,
+    "availableQuantity": 100,
+    "price": 20
+},
+{
+    "img": "./assets/img/products/brindes_chaveiro_1.png",
+    "name": "Chaveiro antiesrresse",
+    "code": 3,
+    "availableQuantity": 100,
+    "price": 9.90
+},
+{
+    "img": "./assets/img/products/brindes_moleskine_1.png",
+    "name": "Caderneta Eficiência",
+    "code": 4,
+    "availableQuantity": 100,
+    "price": 24.90
+}
+
+]

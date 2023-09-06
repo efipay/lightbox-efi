@@ -1,0 +1,24 @@
+{
+    "name": "efi-pay-lightbox-example",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "start": "node index.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "cors": "^2.8.5",
+      "express": "^4.18.1",
+      "sdk-node-apis-efi": "1.0.1",
+      "https": "^1.0.0",
+      "moment": "^2.29.3",
+      "morgan": "^1.10.0",
+      "mysql": "^2.18.1",
+      "nodemon": "^2.0.16",
+      "pusher": "^5.0.1",
+      "tls": "0.0.1",
+      "node-correios": "^3.0.2"
+    }
+  }

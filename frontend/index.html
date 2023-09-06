@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Lightbox Efí Pay | Loja de demonstração" />
+
+    <title>Lightbox Efí Pay | Loja de demonstração</title>
+    <link rel="icon" type="image/png" href="./assets/img/favicon-16x16.png" />
+
+    <meta name="description"
+        content="Lightbox Efí Pay de fácil implementação para coleta das informações de pagamento sobreposta à sua página de checkout.">
+    <meta name="robots" content="all">
+    <meta name="author" content="Efí Pay">
+    <meta name="keywords"
+        content="API Pix, API de pagamento, API Cobranças, Efí Pay, integração Pix, Efí Pay API, lightbox, checkout">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <script src="./assets/utils/calculateShipping.js" defer></script> <!-- Comente essa linha caso vá utilizar o Backend em PHP -->
+    <script src="./assets/js/store.js" defer></script>
+
+    <!--
+        # Script de inicialização do lightbox
+        # Acesse o seguinte link para gerar o seu script: https://dev.efipay.com.br/docs/exemplos-de-integracoes/checkout-ligthbox#adicionando-o-lightbox-em-sua-página
+    -->
+
+
+</head>
+
+<body>
+
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="https://sejaefi.com.br/">
+                    <img src="./assets/img/efi-bank-vertical-primary-dark.svg" alt="Efi Bank" width="200" height="50">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLightbox"
+                    aria-controls="navbarLightbox" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarLightbox">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link disabled" tabindex="-1" aria-disabled="true">Lightbox</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://dev.efipay.com.br/" target="_blank">Documentação</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://github.com/efipay/lightbox-efi"
+                                target="_blank">Download</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-cart" style=" color: #f37021;">Carrinho</i>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li id="carrinho" class="dropdown-header">
+                                    <span id="none">Nenhum podutro selecionado</span>
+
+                                    <table id="tabela" class="table display d-none">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Produtos</th>
+                                                <th scope="col">Preço Unit</th>
+                                                <th scope="col">Qtd</th>
+                                                <th scope="col">Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="bodyTable">
+
+                                        </tbody>
+                                    </table>
+                                    <div class="button-lightbox display d-none">
+                                        <!-- Botão que realiza a chamada do lightbox -->
+                                        <button id='button_lightbox pay_button' rel="gn_lightbox"
+                                            class="buttonLightbox disabled">
+                                            Pagar
+                                        </button>
+                                        <!-- # Botão que realiza a chamada do lightbox -->
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="row mt-4">
+            <div class="col-12 my-2">
+                <div class="position-relative">
+                    <img class="w-100" src="./assets/img/0003_efí.jpg" alt="">
+                    <div class="position-absolute dados apagar d-none">
+                        <h3 class="text-right text">Checkout lightbox</h3>
+                        <br>
+                        <p class="float-right text-p">O checkout via lightbox é o tipo de integração da Efí Pay
+                            <br> que funciona como um facilitador para o desenvolvedor.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <section class="row mt-2 d-flex justify-content-center" id="catalog">
+
+        </section>
+
+        <section class="mb-5 shadow-sm p-3 bg-body rounded">
+            <div class="text-center">
+                <h3>Informações relevantes</h3>
+            </div>
+            <div class="row text-center mt-4 d-flex justify-content-around ">
+                <div class="col-md-5 border rounded p-3 mb-2">
+                    <div class="d-block">
+                        <div class="icon text-white">
+                            <i class="bi bi-bag-check"></i>
+                        </div>
+                    </div>
+                    <p>O checkout via lightbox é o tipo de integração da Efí Pay que funciona como um
+                        facilitador
+                        para o desenvolvedor.</p>
+
+                </div>
+                <div class="col-md-5 border rounded p-3 m-2">
+                    <div class="d-block">
+                        <div class="icon text-white">
+                            <i class="bi bi-info-square"></i>
+                        </div>
+                    </div>
+                    <p>
+                        Neste tipo de integração, o desenvolvedor não precisará implementar uma tela de pagamento
+                        para
+                        sua aplicação. A mesma
+                        será o lightbox.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+        <br />
+
+
+    </div>
+
+
+    <footer class="d-block bg-light p-3 border-top">
+        <div class="container">
+            <div class="d-flex justify-content-center">
+                <img src="assets/img/iconmonstr-info-9.svg" alt="" srcset="">
+                <span>&ensp;Esta loja é somente para testes e os pedidos <b> não serão processados nem
+                        entregues.</b></span>
+
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.4/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,5 @@
+{
+  "require": {
+    "efipay/sdk-php-apis-efi": "^1"
+  }
+}

@@ -1,0 +1,138 @@
+body {
+  background-color: #f7f7f7;
+  color: #525252;
+}
+
+.nav-item a {
+  font-weight: bold;
+}
+
+.content {
+  max-width: 900px;
+  min-width: 350px;
+  margin: 30px auto;
+}
+
+.content h1 {
+  text-indent: -999999px;
+  width: 350px;
+  height: 74px;
+  margin: 30px auto;
+  background-image: url(./assets/img/efi-bank-vertical-primary-dark.svg);
+  background-size: auto;
+  background-size: 350px 74px;
+  background-repeat: no-repeat;
+}
+
+.content .content-white {
+  background: white;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.content .content-white h2 {
+  font-size: 35px;
+  text-align: center;
+  color: #f26522;
+  margin-top: 15px;
+  margin-bottom: 35px;
+}
+
+.content .content-white p {
+  text-align: justify;
+}
+
+.content .content-white h3 {
+  margin-top: 45px;
+  font-size: 24px;
+}
+
+.button-lightbox {
+  text-align: center;
+}
+
+.button-lightbox button {
+  background-color: #f26522;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+}
+
+.button-lightbox button:hover {
+  background-color: #c84d27;
+  cursor: pointer;
+}
+
+.content .content-white a {
+  color: #00b4c5;
+  text-decoration: none;
+}
+
+.content .content-white a:hover {
+  color: #008996;
+  text-decoration: underline;
+}
+
+.dados {
+  bottom: 10px;
+  right: 10px;
+}
+
+.text {
+  font-weight: 700;
+  font-size: 22px;
+  color: #f37021 !important;
+}
+
+.text-p {
+  color: #fff;
+}
+
+@media (max-width: 1024px) {
+  .apagar {
+    display: none;
+  }
+}
+
+.btn-outline-primary {
+  color: #f37021;
+  border-color: #f37021;
+}
+
+.card:hover {
+  box-shadow: 0 0 10px 0 rgba(100, 100, 100, 0.26);
+}
+
+.card:hover .btn-outline-primary {
+  color: #fff;
+  background-color: #f37021;
+}
+
+.icon {
+  background-color: #c84d27;
+  height: 4rem;
+  width: 4rem;
+  font-size: 1.75rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+:disabled {
+  opacity: 0.5;
+}
+
+.disabled {
+  opacity: 0.5;
+}

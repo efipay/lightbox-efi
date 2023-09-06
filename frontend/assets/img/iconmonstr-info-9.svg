@@ -1,0 +1,10 @@
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+	<title>iconmonstr-info-9</title>
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: #f37021 } 
+	</style>
+	<path id="info-9" class="shp0" d="M12 8.25C11.31 8.25 10.75 7.69 10.75 7C10.75 6.31 11.31 5.75 12 5.75C12.69 5.75 13.25 6.31 13.25 7C13.25 7.69 12.69 8.25 12 8.25ZM13 16L11 16L11 10L13 10L13 16ZM12 1C5.66 1 0 5.23 0 11.01C0 13.06 0.74 15.07 2.05 16.63C2.1 18.46 1.02 21.09 0.05 23C2.66 22.53 6.35 21.49 8.03 20.46C17.27 22.71 24 17.06 24 11.01C24 5.19 18.3 1 12 1Z" />
+	<g id="iconmonstr">
+	</g>
+</svg>
