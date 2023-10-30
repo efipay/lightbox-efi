@@ -1,4 +1,3 @@
-// import { calcularFrete } from "../utils/calculateShipping";
 const catalog = document.getElementById('catalog');
 const bodyTable = document.getElementById('bodyTable');
 const buttonLightbox = document.querySelector('.buttonLightbox');
@@ -215,8 +214,31 @@ $gn.ready(function (variable) {
             cep = cep.replace('-', '');
 
             // Descomente a função de acordo com seu Backend
+            function calcularFrete(codeDestination) {
+  const url = ``; // Caminho no Backend para calcular o frete, ex: https://minha.url/frete/${codeDestination}
 
+  return fetch(url)
+      .then(response => {
+          return response.json();
+      }).catch(error => {
+          console.log(error);
+          return error;
+      }
+      );
+}
             // Função para calcular o frete com backend em NodeJS
+            // function calcularFrete(codeDestination) {
+            //     const url = ``; // Caminho no Backend para calcular o frete, ex: https://minha.url/frete/${codeDestination}
+
+            //     return fetch(url)
+            //         .then(response => {
+            //             return response.json();
+            //         }).catch(error => {
+            //             console.log(error);
+            //             return error;
+            //         }
+            //         );
+            // }
             // calcularFrete(cep).then((result) => {
             //     if (result.error == "") {
             //         SHIPPING = Number(result.value.replace(',', '.'));

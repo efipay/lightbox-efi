@@ -27,31 +27,37 @@ O Lightbox se comunica com a API da Efí Pay através de um back-end que deve se
 
 
 ## **Instalação da loja de demonstração**
+
 ### **PHP**
 Clone este repositório e execute o seguinte comando dentro do diretório `./backend/php`, para instalar as dependências.
 ```cmd
 composer install
 ```
-Vá ao arquivo `./frontend/assets/js/store.js ` e descomente a função que começa na linha 245 e termina na linha 272.
+Vá ao arquivo `./frontend/assets/js/store.js ` e descomente a função que começa na linha 267 e termina na linha 294.
+
 ### **Node.js**
 Clone este repositório e execute o seguinte comando dentro do diretório `./backend/nodejs`, para instalar as dependências.
 ```cmd
 npm install
 ```
-Vá ao arquivo `./frontend/assets/js/store.js ` e descomente a função que começa na linha 220 e termina na linha 242.
+Vá ao arquivo `./frontend/assets/js/store.js ` e descomente a função que começa na linha 230 e termina na linha 264.
 
-Agora vá ao arquivo `./frontend/assets/utils/calculateShipping.js` e preencha a variável `url` de acordo com as intruções comentadas no arquivo.
+Preencha a variável `url` na linha 231 com o endereço do seu servidor.
+
+### **Observação**
+Preencha o `actionForm` na linha 332 do arquivo `./frontend/assets/js/store.js ` conforme o orientado no comentario do arquivo.
+
 
 ## **Configuração da loja de demonstração**
 
 ### **Definição das credenciais**
 Para começar, você deve configurar os seguintes parâmetros no arquivo `./backend/php/index.php` ou `./backend/nodejs/index.js`. 
-1. Instancie as informações `Client_Id`, `Client_Secret` da sua aplicação criada no painel da Gerencianet.
+1. Instancie as informações `Client_Id`, `Client_Secret` da sua aplicação criada no painel da Efí.
 2. Informe no atributo `sandbox` igual a **true** se seu ambiente for *Homologação*, ou **false** se for *Produção*. 
 3. Na variável `expirationTime`, informe o tempo de expiração em dias (int). Necessário para gerar o boleto e Pix.
 4. Se você utilizar cobranças Pix:  
   4.1. Informe no atributo `certificate` o diretório relativo com o nome do seu certificado no formato `.p12` referente ao ambiente escolhido (Homologação/Produção).  
-  4.2. Na variável `pixKey`, informe sua chave pix registrada na Gerencianet.
+  4.2. Na variável `pixKey`, informe sua chave pix registrada na Efí.
 
 Caso ainda não tenha estes dados, siga os passos descritos em nossa documentação para [criar uma aplicação e obter as credenciais](https://dev.efipay.com.br/docs/api-pix/credenciais#obtendo-as-credenciais-da-aplica%C3%A7%C3%A3o), [gerar o certificado do Pix](https://dev.efipay.com.br/docs/api-pix/credenciais#gerando-um-certificado-p12), e também [como registrar uma chave Pix](https://sejaefi.com.br/central-de-ajuda/pix/como-cadastrar-chaves-pix#conteudo).
 
