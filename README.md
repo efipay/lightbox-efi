@@ -78,7 +78,7 @@ Tendo o script gerado, você deve inserí-lo na **linha 30** do arquivo `./front
 
 ## **Documentação Adicional**
 
-Em nossa documentação técnica, você pode verificar mais [detalhes das funções do Lightbox Efí](https://dev.efipay.com.br/docs/exemplos-de-integracoes/lightbox), e também outros detalhes de nossa API.
+Em nossa documentação técnica, você pode verificar mais [detalhes das funções do Lightbox Efí](https://dev.efipay.com.br/docs/exemplos-de-integracoes/introducao#lightbox), e também outros detalhes de nossa API.
 
 Se você ainda não tem uma conta digital da Efí, [abra a sua agora](https://app.sejaefi.com.br/)!
 
