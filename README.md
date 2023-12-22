@@ -16,7 +16,7 @@
 
 A integração com o Lightbox da Efí lhe permite exibir o formulário de coleta das informações de pagamento sobreposta à sua página de checkout. Por exemplo, quando o cliente adiciona os produtos no carrinho e fecha o pedido, apenas esmaecemos o fundo do seu site e o comprador visualiza uma nova janela modal para preenchimento dos dados de pagamento.
 
-[Acesse nossa loja de demonstração](https://www.lightbox.efipay.com.br), e experimente como no seguinte exemplo:
+[Acesse nossa loja de demonstração](https://lightbox.efipay.com.br), e experimente como no seguinte exemplo:
 ![Gif lightbox Efí](https://github.com/efipay/lightbox-efi/blob/main/frontend/assets/img/exemplo-lightbox.gif)
 
 Neste exemplo utilizamos como dependência a SDK de PHP ou SDK de NodeJS, que é responsável por realizar as requisições na a API Efí Pay. Mas o nosso Lightbox, lhe permite integrar sua aplicação também com as [SDKs Efí Pay em outras linguagens disponíveis](https://github.com/efipay).
